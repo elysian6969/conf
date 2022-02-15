@@ -1,0 +1,22 @@
+dev-util/nvidia-cuda-sdk cuda.conf
+
+media-libs/libsdl2 fastnt.conf
+media-libs/vulkan-layers fastnt.conf
+media-libs/vulkan-loader fastnt.conf
+
+media-video/obs-studio fastnt.conf
+
+sys-devel/clang fastnt.conf physical.conf
+sys-devel/gcc notree-vectors.conf
+sys-devel/llvm fastnt.conf physical.conf
+
+sys-libs/glibc glibc.conf
+
+x11-libs/gtk+ gtk.conf fastnt.conf
+x11-libs/pixman fastnt.conf
+
+dev-lang/rust physical.conf
+
+dev-libs/libbsd fastnt.conf
+
+sys-process/htop fastnt.conf

@@ -1,0 +1,7 @@
+app-editors/nano
+media-sound/pulseaudio
+#net-misc/netifrc
+#sys-apps/openrc
+sys-apps/systemd
+sys-process/daemontools
+sys-process/runit
