@@ -20,3 +20,6 @@ dev-lang/rust physical.conf
 dev-libs/libbsd fastnt.conf
 
 sys-process/htop fastnt.conf
+
+net-libs/nodejs fastnt.conf
+www-client/ungoogled-chromium fastnt.conf
