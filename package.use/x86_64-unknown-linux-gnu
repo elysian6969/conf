@@ -110,14 +110,10 @@ net-libs/nghttp2 abi_x86: 32
 net-libs/nodejs inspector -lto
 
 net-misc/curl abi_x86: 32
-net-misc/curl adns
-net-misc/networkmanager abi_x86: 32
 net-misc/openssh -static
 net-misc/wget -static
 
 net-print/cups abi_x86: 32
-
-net-wireless/wpa_supplicant dbus
 
 sys-apps/dbus X
 sys-apps/dbus abi_x86: 32 X
