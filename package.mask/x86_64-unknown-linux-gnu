@@ -1,7 +1,24 @@
+# dont install unwanted shit by default
+*/*::lto-overlay
+*/*::mv
+*/*::pentoo
+*/*::pf4public
+*/*::steam-overlay
+
+# ditto
 app-editors/nano
+
+dev-lang/rust
+
 media-sound/pulseaudio
-#net-misc/netifrc
-#sys-apps/openrc
+
+net-misc/netifrc
+
+sys-apps/openrc
 sys-apps/systemd
+sys-apps/systemd-tmpfiles
+
 sys-process/daemontools
 sys-process/runit
+
+x11-base/xorg-server::gentoo

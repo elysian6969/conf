@@ -1,1 +1,13 @@
-sys-fs/eudev
+app-portage/lto-rebuild::lto-overlay
+app-portage/portage-bashrc-mv::mv
+
+app-shells/runtitle::mv
+
+dev-python/frida-python::pentoo
+
+dev-util/ghidra::pentoo
+dev-util/frida-tools::pentoo
+
+sys-fs/eudev::gentoo
+
+www-client/ungoogled-chromium::pf4public

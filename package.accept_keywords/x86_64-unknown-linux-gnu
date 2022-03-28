@@ -14,7 +14,6 @@ dev-lua/luv ~amd64
 dev-util/nvidia-cuda-sdk ~amd64
 dev-util/nvidia-cuda-toolkit ~amd64
 
-games-util/steam-client-meta ~amd64
 games-util/steam-launcher ~amd64
 
 media-libs/libglvnd ~amd64
@@ -28,7 +27,7 @@ sys-config/ltoize ~amd64
 sys-libs/glibc ~amd64
 sys-libs/libudev-compat ~amd64
 
-x11-drivers/nvidia-drivers ~amd64
+x11-drivers/nvidia-drivers **
 
 x11-misc/picom **
 x11-misc/xwinwrap **

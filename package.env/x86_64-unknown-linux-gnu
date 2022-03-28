@@ -1,1 +1,74 @@
+app-arch/bzip2 nolto.conf
+app-arch/unzip nolto.conf
+app-arch/zip nolto.conf
+
+app-crypt/mit-krb5 nolto.conf
+app-crypt/rhash nolto.conf
+
+app-shells/zsh nolto.conf
+
+dev-lang/lua nolto.conf
+dev-lang/luajit gcc.conf
+dev-lang/perl nolto.conf
+
+dev-libs/libffi gcc.conf
+dev-libs/libgcrypt gcrypt.conf
+dev-libs/libmpack gcc.conf
+dev-libs/libvterm nolto.conf
+dev-libs/re2 gcc.conf
+dev-libs/tree-sitter gcc.conf
+
+dev-lua/lpeg nolto.conf
+dev-lua/LuaBitOp nolto.conf
+
+dev-perl/Socket6 nolto.conf
+
+dev-python/cython gcc.conf
+dev-python/lxml gcc.conf
+dev-python/pycryptodome gcc.conf
+
+dev-qt/qtcore nolto.conf
+dev-qt/qtdeclarative nolto.conf
+dev-qt/qtgui nolto.conf
+dev-qt/qtsql nolto.conf
+dev-qt/qtsvg nolto.conf
+dev-qt/qtwidgets nolto.conf
+dev-qt/qtnetwork nolto.conf
+dev-qt/linguist-tools nolto.conf
+dev-qt/qtchooser nolto.conf
+dev-qt/qtprintsupport nolto.conf
+
+dev-util/valgrind gcc.conf
+
+media-libs/freetype nolto.conf
+media-libs/openh264 nolto.conf
+media-libs/x264 nolto.conf
+
+media-video/ffmpeg gcc.conf
+
+net-dns/libidn2 nolto.conf
+
+sys-apps/busybox nolto.conf
+sys-apps/pciutils nolto.conf
+sys-apps/less nolto.conf
+sys-apps/sysvinit nolto.conf
+
+sys-devel/binutils gcc.conf
+sys-devel/gcc gcc.conf
+
+sys-fs/btrfs-progs gcc.conf
+sys-fs/eudev nolto.conf
+sys-fs/e2fsprogs gcc.conf
+
+sys-libs/binutils-libs nolto.conf
+sys-libs/e2fsprogs-libs nolto.conf
+sys-libs/libxcrypt nolto.conf
+sys-libs/readline nolto.conf
+
 sys-process/htop htop.conf
+
+x11-drivers/nvidia-drivers gcc.conf
+
+net-print/cups nolto.conf
+app-text/ghostscript-gpl nolto.conf
+dev-java/openjdk gcc.conf
