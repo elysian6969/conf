@@ -1,220 +1,136 @@
-*/* -cups
-*/* -dbus -elogind -pam -polkit
-*/* -fortran -pcre -perl
-*/* -libbsd
-*/* -nls
-*/* -seccomp
-*/* -systemd
-*/* alsa -pipewire -pulseaudio
-*/* clang custom-cflags graphite lto pgo
-*/* opencl cuda nvidia vaapi vdpau vulkan vulkan-overlay xvmc zink
+# we do not care about our profile defaults`
+*/* -*
+
+# audio
+*/* alsa
+
+# compilation
+*/* clang custom-cflags graphite lto
+
+# graphics
+*/* cuda nvenc nvidia opencl opengl vaapi vdpau vulkan vulkan-overlay xvmc
+
+# compression
 */* zstd
 
+# specifics
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* llvm_targets: -* aarch64 arm nvptx webassembly x86
+*/* lua_single_target: -* luajit
+*/* python_single_target: -* python3_10
+*/* python_targets: -* python3_10
 */* video_cards: -* nvidia
 
-app-accessibility/at-spi2-atk abi_x86: 32
-app-accessibility/at-spi2-core abi_x86: 32
-
-app-arch/bzip2 abi_x86: 32
-app-arch/zstd  abi_x86: 32
-
-app-crypt/gcr gtk
-app-crypt/libmd abi_x86: 32
-
-app-editors/neovim lua_single_target: -* luajit
-
-app-shells/bash -net -readline
-app-shells/zsh -gdbm -unicode 
-
-app-text/xmlto text
-
-dev-db/sqlite abi_x86: 32
-
-dev-lang/mono
-dev-lang/rust system-llvm
-dev-lang/rust-bin abi_x86: 32
-
-dev-libs/atk abi_x86: 32
-dev-libs/dbus-glib abi_x86: 32
-dev-libs/elfutils abi_x86: 32
-dev-libs/expat abi_x86: 32
-dev-libs/fribidi abi_x86: 32
-dev-libs/glib abi_x86: 32
-dev-libs/gmp abi_x86: 32
-dev-libs/icu abi_x86: 32
-dev-libs/libbsd abi_x86: 32
-dev-libs/libffi abi_x86: 32
-dev-libs/libpcre abi_x86: 32
-dev-libs/libtasn1 abi_x86: 32
-dev-libs/libunistring abi_x86: 32
-dev-libs/libusb abi_x86: 32
-dev-libs/libxml2 icu
-dev-libs/libxml2 abi_x86: 32
-dev-libs/lzo abi_x86: 32
-dev-libs/nettle abi_x86: 32
-dev-libs/nspr abi_x86: 32
-dev-libs/nss abi_x86: 32
-dev-libs/opencl-icd-loader abi_x86: 32
-dev-libs/openssl abi_x86: 32
-
-dev-lua/lpeg lua_targets: -* luajit
-dev-lua/luv lua_single_target: -* luajit
-dev-lua/mpack lua_targets: -* luajit
-
-dev-util/glslang abi_x86: 32
-dev-util/spirv-tools abi_x86: 32
-dev-util/vulkan-tools X cube
-
-gnome-base/librsvg abi_x86: 32
-
-games-util/steam-client-meta -pulseaudio -steamfonts -steamruntime -steamvr -trayicon
-games-util/steam-launcher -joystick -steamruntime -udev -xterm -zenity
-
-media-gfx/graphite2 abi_x86: 32
-media-gfx/imagemagick X
-
+dev-libs/nettle gmp
 media-libs/alsa-lib abi_x86: 32
-media-libs/dav1d abi_x86: 32
-media-libs/flac abi_x86: 32
-media-libs/fontconfig abi_x86: 32
-media-libs/freetype abi_x86: 32
-media-libs/harfbuzz icu
-media-libs/harfbuzz abi_x86: 32
-media-libs/glu abi_x86: 32
-media-libs/libepoxy abi_x86: 32
-media-libs/libglvnd X
-media-libs/libglvnd abi_x86: 32
-media-libs/libogg abi_x86: 32
-media-libs/libpng abi_x86: 32
-media-libs/libpng-compat abi_x86: 32
-media-libs/libsdl2 X opengl
-media-libs/libsdl2 abi_x86: 32
-media-libs/libsndfile abi_x86: 32
-media-libs/libvorbis abi_x86: 32
-media-libs/libvpx postproc
-media-libs/mesa abi_x86: 32
-media-libs/nv-codec-headers abi_x86: 32
-media-libs/openal abi_x86: 32
-media-libs/opus abi_x86: 32
-media-libs/speexdsp abi_x86: 32
-media-libs/vulkan-layers X
-media-libs/vulkan-layers abi_x86: 32
-media-libs/vulkan-loader X layers
-media-libs/vulkan-loader abi_x86: 32
-media-libs/x264 abi_x86: 32
-
-media-plugins/alsa-plugins -pulseaudio
-media-plugins/alsa-plugins abi_x86: 32 -pulseaudio
-
-media-sound/apulse abi_x86: 32
-media-sound/pulseaudio abi_x86: 32
-
-media-video/ffmpeg x264
-media-video/ffmpeg abi_x86: 32
-media-video/mpv libmpv
-media-video/pipewire abi_x86: 32
-media-video/pipewire alsa pipewire-alsa
-
-net-dns/c-ares abi_x86: 32
-net-dns/libidn2 abi_x86: 32
-
-net-libs/gnutls abi_x86: 32
-net-libs/libasyncns abi_x86: 32
-net-libs/libndp  abi_x86: 32
-net-libs/nghttp2 abi_x86: 32
-net-libs/nodejs inspector -lto
-
-net-misc/curl abi_x86: 32
-
-net-print/cups abi_x86: 32
-
-sys-apps/debianutils -installkernel
-sys-apps/dbus X
-sys-apps/dbus abi_x86: 32 X
-sys-apps/paludis eapi7
-sys-apps/pciutils -udev
-sys-apps/portage -ipc -native-extensions -rsync-verify -xattr 
-sys-apps/shadow -su
-sys-apps/util-linux -su
-sys-apps/util-linux abi_x86: 32
-sys-devel/binutils gold plugins
-sys-devel/clang abi_x86: 32
-sys-devel/gcc disable-bootstrap -lto -nptl -pgo
-sys-devel/llvm abi_x86: 32
-
-sys-fs/udev abi_x86: 32
-
-sys-libs/binutils-libs abi_x86: 32
-sys-libs/libcap abi_x86: 32
-sys-libs/libudev-compat abi_x86: 32
-sys-libs/libxcrypt abi_x86: 32
-sys-libs/ncurses abi_x86: 32
-sys-libs/pam abi_x86: 32
-sys-libs/readline abi_x86: 32
-sys-libs/zlib abi_x86: 32
-sys-libs/zlib minizip
-
-sys-process/htop lm-sensors -unicode
-
-virtual/glu abi_x86: 32
-virtual/libcrypt abi_x86: 32
-virtual/libelf abi_x86: 32
-virtual/libiconv abi_x86: 32
-virtual/libintl abi_x86: 32
-virtual/libudev abi_x86: 32
-virtual/libusb abi_x86: 32
-virtual/opencl abi_x86: 32
 virtual/opengl abi_x86: 32
-virtual/rust abi_x86: 32
+media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml X
+media-libs/libheif x265
+media-libs/libsndfile minimal
 
-www-client/ungoogled-chromium -clang -pgo optimize-webui system-openjpeg tcmalloc
+sys-libs/libcxx libunwind abi_x86: 32
+sys-libs/libcxxabi libunwind abi_x86: 32
+sys-libs/libunwind static-libs abi_x86: 32
+sys-libs/llvm-libunwind static-libs abi_x86: 32
 
-x11-apps/mesa-progs egl
+#dev-libs/openssl sslv3
+#net-misc/curl http2 ipv6 openssl quiche ssl sslv3 threads curl_ssl: openssl
+net-misc/curl http2 ipv6 openssl quiche ssl threads abi_x86: 32 curl_ssl: openssl
 
-x11-base/xcb-proto abi_x86: 32
-# xorg-drivers wants udev
-# x11-base/xorg-server -udev
+media-video/ffmpeg chromium debug encode gpl hardcoded-tables openh264 vpx x264 x265 webp abi_x86: 32
 
-x11-drivers/nvidia-drivers -tools
-x11-drivers/nvidia-drivers abi_x86: 32
+media-libs/openh264 abi_x86: 32
+media-libs/libwebp abi_x86: 32
 
-x11-libs/cairo X
-x11-libs/cairo abi_x86: 32
-x11-libs/gdk-pixbuf abi_x86: 32
-x11-libs/gtk+ -cups
-x11-libs/gtk+ abi_x86: 32
+dev-util/spirv-tools abi_x86: 32
+media-libs/vulkan-layers X abi_x86: 32
+media-libs/vulkan-loader X abi_x86: 32
+
+media-libs/openal abi_x86: 32
+dev-libs/libxml2 icu abi_x86: 32
+sys-libs/zlib minizip abi_x86: 32
+media-sound/apulse abi_x86: 32
+media-sound/alsa-utils ncurses
+media-libs/libsamplerate abi_x86: 32
+media-libs/opusfile float
+
+sys-fs/e2fsprogs abi_x86: 32
+media-libs/fontconfig abi_x86: 32
+
+media-libs/libv4l abi_x86: 32
+
+x11-libs/libXt abi_x86: 32
 x11-libs/libICE abi_x86: 32
 x11-libs/libSM abi_x86: 32
-x11-libs/libX11 abi_x86: 32
-x11-libs/libXScrnSaver abi_x86: 32
-x11-libs/libXau abi_x86: 32
-x11-libs/libXcomposite abi_x86: 32
-x11-libs/libXcursor abi_x86: 32
-x11-libs/libXdamage abi_x86: 32
-x11-libs/libXdmcp abi_x86: 32
-x11-libs/libXext abi_x86: 32
-x11-libs/libXfixes abi_x86: 32
-x11-libs/libXi abi_x86: 32
-x11-libs/libXinerama abi_x86: 32
-x11-libs/libXrandr abi_x86: 32
-x11-libs/libXrender abi_x86: 32
-x11-libs/libXtst abi_x86: 32
-x11-libs/libXv abi_x86: 32
-x11-libs/libXvMC abi_x86: 32
-x11-libs/libXxf86vm abi_x86: 32
+virtual/jpeg abi_x86: 32
+media-libs/libjpeg-turbo abi_x86: 32
+
+media-libs/sdl2-image gif jpeg png webp abi_x86: 32
+media-libs/sdl2-mixer opus mp3 abi_x86: 32
+media-libs/sdl2-net abi_x86: 32
+media-libs/sdl2-gfx abi_x86: 32
+media-libs/sdl2-ttf X abi_x86: 32
+media-libs/libsdl2 libsamplerate opengl sound threads video X abi_x86: 32
+
+app-accessibility/at-spi2-core abi_x86: 32
+app-arch/brotli abi_x86: 32
+app-arch/bzip2 abi_x86: 32
+app-arch/zstd threads abi_x86: 32
+app-crypt/libmd abi_x86: 32
+app-editors/neovim tui
+app-shells/zsh gdbm pcre unicode
+app-text/xmlto text
+dev-lang/python ssl xml
+dev-libs/expat abi_x86: 32
+dev-libs/libbsd abi_x86: 32
+dev-libs/libffi abi_x86: 32
+dev-libs/libtomcrypt tomsfastmath
+dev-libs/openssl asm abi_x86: 32
+dev-util/glslang abi_x86: 32
+media-libs/freetype brotli harfbuzz png abi_x86: 32
+media-libs/opus abi_x86: 32
+media-libs/vulkan-loader abi_x86: 32
+net-libs/nghttp2 abi_x86: 32
+sys-apps/dbus abi_x86: 32
+sys-apps/util-linux abi_x86: 32
+sys-devel/binutils plugins
+sys-devel/clang sys-devel/clang default-compiler-rt default-libcxx default-lld llvm-libunwind abi_x86: 32
+sys-devel/llvm binutils-plugin abi_x86: 32
+sys-libs/glibc compile-locales multiarch multilib vanilla 
+sys-libs/ncurses unicode abi_x86: 32
+virtual/libiconv abi_x86: 32
+virtual/libintl abi_x86: 32
 x11-libs/libdrm abi_x86: 32
-x11-libs/libva X abi_x86: 32
-x11-libs/libva-compat abi_x86: 32
-x11-libs/libva-vdpau-driver abi_x86: 32
-x11-libs/libvdpau abi_x86: 32
+x11-libs/libXrender abi_x86: 32
+dev-libs/glib abi_x86: 32
+x11-libs/libXfixes abi_x86: 32
+x11-libs/libX11 abi_x86: 32
+x11-libs/libXtst abi_x86: 32
+x11-libs/libXext abi_x86: 32
+x11-libs/libXrandr abi_x86: 32
 x11-libs/libxcb abi_x86: 32
-x11-libs/libxkbcommon X
 x11-libs/libxshmfence abi_x86: 32
-x11-libs/pango abi_x86: 32
-x11-libs/pixman abi_x86: 32
+dev-libs/icu abi_x86: 32
+media-libs/harfbuzz abi_x86: 32
+x11-libs/gtk+ X abi_x86: 32
 
-x11-misc/picom opengl
+# all this shit is for java-config
+sys-apps/portage python_targets: python3_9
 
-dev-java/openjdk -cups -jbootstrap
+dev-python/setuptools python_targets: python3_9
+dev-python/appdirs python_targets: python3_9
+dev-python/jaraco-text python_targets: python3_9
+dev-python/more-itertools python_targets: python3_9
+dev-python/nspektr python_targets: python3_9
+dev-python/ordered-set python_targets: python3_9
+dev-python/packaging python_targets: python3_9
+dev-python/certifi python_targets: python3_9
+dev-python/setuptools_scm python_targets: python3_9
+dev-python/wheel python_targets: python3_9
+dev-python/gpep517 python_targets: python3_9
+dev-python/installer python_targets: python3_9
+dev-python/tomli python_targets: python3_9
+dev-python/flit_core python_targets: python3_9
+dev-python/pyparsing python_targets: python3_9
+dev-python/jaraco-context python_targets: python3_9
+dev-python/jaraco-functools python_targets: python3_9

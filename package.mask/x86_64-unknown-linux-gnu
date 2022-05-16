@@ -8,7 +8,10 @@
 # ditto
 app-editors/nano
 
-dev-lang/rust
+#dev-lang/rust
+
+gnome-base/*
+gnome-extra/*
 
 media-sound/pulseaudio
 
@@ -16,7 +19,7 @@ net-misc/netifrc
 
 sys-apps/openrc
 sys-apps/systemd
-sys-apps/systemd-tmpfiles
+#sys-apps/systemd-tmpfiles
 
 sys-process/daemontools
 sys-process/runit

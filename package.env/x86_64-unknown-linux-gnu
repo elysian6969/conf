@@ -10,6 +10,7 @@ app-shells/zsh nolto.conf
 dev-lang/lua nolto.conf
 dev-lang/luajit gcc.conf
 dev-lang/perl nolto.conf
+dev-lang/python python.conf
 
 dev-libs/libffi gcc.conf
 dev-libs/libgcrypt gcrypt.conf
@@ -21,7 +22,11 @@ dev-libs/tree-sitter gcc.conf
 dev-lua/lpeg nolto.conf
 dev-lua/LuaBitOp nolto.conf
 
+dev-perl/Locale-gettext nolto.conf
+dev-perl/Net-SSLeay nolto.conf
 dev-perl/Socket6 nolto.conf
+dev-perl/TermReadKey nolto.conf
+dev-perl/Text-CharWidth nolto.conf
 
 dev-python/cython gcc.conf
 dev-python/lxml gcc.conf
@@ -41,6 +46,7 @@ dev-qt/qtprintsupport nolto.conf
 dev-util/valgrind gcc.conf
 
 media-libs/freetype nolto.conf
+media-libs/libvpx nolto.conf
 media-libs/openh264 nolto.conf
 media-libs/x264 nolto.conf
 
@@ -62,13 +68,20 @@ sys-fs/e2fsprogs gcc.conf
 
 sys-libs/binutils-libs nolto.conf
 sys-libs/e2fsprogs-libs nolto.conf
+sys-libs/glibc glibc.conf
 sys-libs/libxcrypt nolto.conf
 sys-libs/readline nolto.conf
 
 sys-process/htop htop.conf
+
+www-client/ungoogled-chromium physical.conf
 
 x11-drivers/nvidia-drivers gcc.conf
 
 net-print/cups nolto.conf
 app-text/ghostscript-gpl nolto.conf
 dev-java/openjdk gcc.conf
+
+#media-video/ffmpeg steam.conf
+#sys-libs/glibc steam.conf
+#x11-libs/gtk+ steam.conf

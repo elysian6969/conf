@@ -1,4 +1,4 @@
-app-editors/neovim ~amd64
+app-editors/neovim **
 
 app-portage/golop ~amd64
 app-portage/lto-rebuild ~amd64
@@ -22,12 +22,18 @@ media-video/obs-studio ~amd64
 
 sys-apps/paludis **
 
+sys-devel/mold **
+
 sys-config/ltoize ~amd64
 
 sys-libs/glibc ~amd64
 sys-libs/libudev-compat ~amd64
 
+x11-apps/sx **
+
 x11-drivers/nvidia-drivers **
 
 x11-misc/picom **
 x11-misc/xwinwrap **
+
+dev-util/radare2 ~amd64
