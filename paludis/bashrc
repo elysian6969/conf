@@ -1,0 +1,42 @@
+CHOST="x86_64-pc-linux-musl"
+
+DEFAULT_CFLAGS="-march=native -O2 -fomit-frame-pointer -pipe"
+DEFAULT_CXXFLAGS="${DEFAULT_CFLAGS}"
+
+export PATH="/usr/x86_64-pc-linux-musl/libexec/paludis/utils"
+export PATH="/usr/x86_64-pc-linux-musl/bin:${PATH}"
+export PATH="/milk/global:${PATH}"
+
+
+case "${CATEGORY}/${PN}" in
+    dev-lang/python)
+        #DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -O3"
+        #DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -O3"
+        ;;
+    sys-libs/musl*)
+        DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -O3"
+        DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -O3"
+        ;;
+esac
+
+case "${PALUDIS_CROSS_COMPILE_HOST}" in
+    i686-pc-linux-gnu)
+        export PATH="/usr/i686-pc-linux-gnu/bin:${PATH}"
+        ;;
+    x86_64-pc-linux-gnu)
+        export PATH="/usr/x86_64-pc-linux-gnu/bin:${PATH}"
+        ;;
+esac
+
+echo "${CATEGORY}/${PN}"
+echo DEFAULT_CFLAGS="${DEFAULT_CFLAGS}"
+echo DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS}"
+
+i686_pc_linux_gnu_CFLAGS="${DEFAULT_CFLAGS}"
+i686_pc_linux_gnu_CXXFLAGS="${DEFAULT_CXXFLAGS}"
+
+x86_64_pc_linux_gnu_CFLAGS="${DEFAULT_CFLAGS}"
+x86_64_pc_linux_gnu_CXXFLAGS="${DEFAULT_CXXFLAGS}"
+
+x86_64_pc_linux_musl_CFLAGS="${DEFAULT_CFLAGS}"
+x86_64_pc_linux_musl_CXXFLAGS="${DEFAULT_CXXFLAGS}"

@@ -1,0 +1,12 @@
+diff --git a/configure.ac1 b/configure.ac
+index 3fba953..e608d1a 100644
+--- a/configure.ac1
++++ b/configure.ac
+@@ -136,7 +136,6 @@ UL_WARN_ADD([-Wextra])
+ 
+ UL_WARN_ADD([-Waddress-of-packed-member])
+ UL_WARN_ADD([-Wdiscarded-qualifiers])
+-UL_WARN_ADD([-Wembedded-directive])
+ UL_WARN_ADD([-Wextra-semi])
+ UL_WARN_ADD([-Wformat-security])
+ UL_WARN_ADD([-Wimplicit-function-declaration])
