@@ -1,0 +1,148 @@
+:root {
+    --background-primary: #0d0d0d;
+    --background-secondary: #0d0d0d;
+    --background-secondary-alt: #0d0d0d;
+    --background-tertiary: #0d0d0d;
+    --background-floating: #0d0d0d;
+    --channeltextarea-background: #0d0d0d;
+}
+
+/* removals */
+/* beta tag on guild content moderation */
+div[class^="messageFilterBetaTag"],
+/* new tag on guild insights */
+div[class^="textBadge"][style="background-color: var(--status-danger);"],
+/* timestamps on messages */
+span[class^="timestamp"],
+/* send a gift button */
+button[aria-label="Send a gift"],
+/* gif picker */
+button[aria-label="Open GIF picker"],
+/* sticker picker */
+button[aria-label="Open sticker picker"],
+/* remove events "channel" */
+li[class^="containerDefault"]:not([data-dnd-name]),
+/* remove active thrreads */
+ul[aria-label="Channels"] div[class^="wrapper"][role="listitem"],
+/* boost goal */
+ul[aria-label="Channels"] div[aria-label^="Buy Boosts"],
+/* padding for guild banner */
+ul[aria-label="Channels"] div[style^="height"],
+/* guild banner */
+nav[aria-label*="server"] div[class^="animatedContainer"],
+/* support button */
+a[href="https://support.discord.com"],
+/* inbox button */
+div[aria-label="Inbox"],
+/* notification settings button */
+div[aria-label="Notification Settings"],
+/* copy id icon in context menu */
+div[id="channel-context-devmode-copy-id"] div[class^="iconContainer"],
+/* seperators */
+div[role="separator"],
+/* community info container */
+div[class^="communityInfoContainer"]
+{
+    display: none;
+}
+
+/* apply base properties to text */
+/* guild settings, user settings, context menu items */
+div[class^="item"],
+/* message content */
+div[id^="message-content"],
+/* message content containing code */
+div[id^="message-content"] code {
+    background:  linear-gradient(35deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
+    font-family: 'Quicksand';
+    font-size: 15px;
+    font-weight: 100;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.21px;
+    -webkit-text-stroke-color: transparent;
+}
+
+/* guild settings, user settings */
+div[class^="item"] {
+    text-transform: lowercase;
+}
+
+/* message content containing code */
+div[id^="message-content"] code {
+    font-family: 'Space Mono';
+    font-size: 13px;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+/* context menu subtext */
+div[class^="subtext"] {
+    -webkit-text-stroke-width: 0.25px;
+}
+
+/* context menu */
+div[class^="menu"] {
+    /* only change this property */
+    --border-size: 1px;
+    
+    /* math */
+    --real-border-size: calc(var(--border-size) + 5px);
+    --inverted-border-size: calc(-var(--real-border-size));
+    --border-size-2: calc(var(--real-border-size) * 10);
+    --size: calc(100% + var(--border-size-2));
+    
+    background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9A9AE2, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
+    background-position: -50px -50px;
+    background-size: var(--size) var(--size);
+    border: solid var(--real-border-size) transparent;
+    border-radius: 0;
+    box-sizing: border-box;
+    margin: var(--inverted-border-size) var(--inverted-border-size) 0 0;
+}
+
+/* context menu border */
+div[class^="menu"]:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    background: #0d0d0d;
+}
+
+/* context submenu */
+div[class^="submenuContainer"] div[class^="submenu"] {
+    /* only change this property */
+    --border-size: 1px;
+    
+    /* math */
+    --real-border-size: calc(var(--border-size) + 5px);
+    --inverted-border-size: calc(-var(--real-border-size));
+    --border-size-2: calc(var(--real-border-size) * 10);
+    --size: calc(100% + var(--border-size-2));
+    
+    background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9A9AE2, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
+    background-position: -50px -50px;
+    background-size: var(--size) var(--size);
+    border: solid var(--real-border-size) transparent;
+    border-radius: 0;
+    box-sizing: border-box;
+    margin: -5px -5px;
+    padding: 0;
+}
+
+/* context submenu border */
+div[class^="submenuContainer"] div[class^="submenu"]:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -6px;
+    background: #0d0d0d;
+}

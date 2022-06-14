@@ -1,0 +1,51 @@
+{
+	"name": "ely",
+	"version": "0.1",
+	"description": "",
+	"manifest_version": 2,
+	"theme": {
+		"colors": {
+			"background_tab": [13, 13, 13],
+			"background_tab_inactive": [13, 13, 13],
+			"background_tab_incognito": [13, 13, 13],
+			"background_tab_incognito_inactive": [13, 13, 13],
+
+			"bookmark_text": [0, 255, 0],
+
+			"button_background": [255, 255, 0],
+
+			"frame": [13, 13, 13],
+			"frame_inactive": [13, 13, 13],
+			"frame_incognito": [13, 13, 13],
+			"frame_incognito_inactive": [13, 13, 13],
+
+			"ntp_background": [13, 13, 13],
+			"ntp_header": [219, 217, 218],
+			"ntp_link": [219, 217, 218],
+			"ntp_text": [219, 217, 218],
+
+			"omnibox_background": [13, 13, 13],
+			"omnibox_text": [219, 217, 218],
+
+			"tab_text": [219, 217, 218],
+
+			"tab_background_text": [219, 217, 218],
+			"tab_background_text_inactive": [219, 217, 218],
+			"tab_background_text_incognito": [219, 217, 218],
+			"tab_background_text_incognito_inactive": [219, 217, 218],
+
+			"toolbar": [13, 13, 13],
+			"toolbar_button_icon": [219, 217, 218],
+			"toolbar_text": [255, 0, 255]
+		},
+		"tints": {
+			"buttons": [0, 0, 1.0],
+			"tint_frame": [0, 0, 1.0],
+			"tint_frame_inactive": [0, 0, 1.0]
+		},
+		"properties": {
+			"ntp_background_alignment": "bottom",
+			"ntp_background_repeat": "no-repeat"
+		}
+	}
+}
