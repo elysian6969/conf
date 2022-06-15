@@ -5,6 +5,7 @@
     --background-tertiary: #0d0d0d;
     --background-floating: #0d0d0d;
     --channeltextarea-background: #0d0d0d;
+    --search-popout-option-fade: unset;
 }
 
 /* removals */
@@ -13,7 +14,7 @@ div[class^="messageFilterBetaTag"],
 /* new tag on guild insights */
 div[class^="textBadge"][style="background-color: var(--status-danger);"],
 /* timestamps on messages */
-span[class^="timestamp"],
+h2[aria-labelledby*="message-timestamp"] span[class^="timestamp"],
 /* send a gift button */
 button[aria-label="Send a gift"],
 /* gif picker */
@@ -40,9 +41,9 @@ div[aria-label="Notification Settings"],
 div[id="channel-context-devmode-copy-id"] div[class^="iconContainer"],
 /* seperators */
 div[role="separator"],
+div[class^="separator"],
 /* community info container */
-div[class^="communityInfoContainer"]
-{
+div[class^="communityInfoContainer"] {
     display: none;
 }
 
@@ -52,15 +53,108 @@ div[class^="item"],
 /* message content */
 div[id^="message-content"],
 /* message content containing code */
-div[id^="message-content"] code {
-    background:  linear-gradient(35deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
+div[id^="message-content"] code,
+/* titles (in settings etc) */
+h1[class*="title"],
+/* subtitles (in settings etc) */
+h3[class*="title"],
+/* description (in settings etc) */
+div[class*="description"],
+/* content moderation item title */
+div[data-text-variant="text-sm/normal"],
+/* content moderation item item */
+div[data-text-variant="text-xs/medium"],
+/* header on side pannel in settings */
+div[class^="header"],
+/* nitro item in settings */
+div[class^="premiumLabel"],
+/* channel textarea placeholder */
+div[class^="placeholder"],
+/* channel textarea text */
+div[data-slate-node="element"],
+/* channel */
+div[class^="channelName"],
+/* category */
+div[class^="overflow"],
+/* guild name */
+h1[class^="name"],
+/* channel topic */
+div[class^="topic"],
+/* search placeholder */
+div[class^="public-DraftEditorPlaceholder"] {
+    background: linear-gradient(35deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
     font-family: 'Quicksand';
     font-size: 15px;
     font-weight: 100;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1.21px;
+    -webkit-text-stroke-width: 0.56px;
     -webkit-text-stroke-color: transparent;
+}
+
+/* search placeholder */
+div[class^="public-DraftEditorPlaceholder"] {
+    font-size: 14px;
+    opacity: 0.8;
+    text-transform: lowercase;
+}
+
+/* attachment border radius */
+div[class^="imageWrapper"] {
+    border-radius: 0;
+}
+
+/* square play button */
+div[class^="playCenter"] div[class^="wrapper"] {
+    border-radius: 0;
+}
+
+/* dm channel */
+div[class^="name"] div[class^="overflow"] {
+    font-size: 16px;
+}
+
+/* category */
+div[class^="overflow"] {
+    font-size: 12px;
+}
+
+/* channel textarea placeholder */
+div[class^="placeholder"] {
+    opacity: 0.6;
+}
+
+div[class^="header"]:nth-child(1) {
+    margin: 0px 0px 9px 0px !important;
+}
+
+/* header on side pannel in settings */
+div[class^="header"] {
+    font-size: 16px;
+    -webkit-text-stroke-width: 1px;
+    margin: 9px 0px 8px 0px;
+    text-transform: lowercase;
+}
+
+/* subtitles (in settings etc) */
+h1[class*="title"] {
+    font-size: 17px;
+}
+
+h3[class*="title"] {
+    font-size: 15px;
+    -webkit-text-stroke-width: 0.3px;
+}
+
+/* content moderation item title */
+div[class*="description"] {
+    font-size: 12.5px;
+    -webkit-text-stroke-width: 0.5px;
+}
+
+/* content moderation item item */
+div[data-text-variant="text-xs/medium"] {
+    font-size: 11px;
 }
 
 /* guild settings, user settings */
@@ -71,8 +165,8 @@ div[class^="item"] {
 /* message content containing code */
 div[id^="message-content"] code {
     font-family: 'Space Mono';
-    font-size: 13px;
-    -webkit-text-stroke-width: 0.5px;
+    font-size: 11.9px !important;
+    -webkit-text-stroke-width: 0.70px;
 }
 
 /* context menu subtext */
@@ -81,16 +175,16 @@ div[class^="subtext"] {
 }
 
 /* context menu */
-div[class^="menu"] {
+div[class^="menu"]:not([class^="menuIcon"]) {
     /* only change this property */
     --border-size: 1px;
-    
+
     /* math */
     --real-border-size: calc(var(--border-size) + 5px);
     --inverted-border-size: calc(-var(--real-border-size));
     --border-size-2: calc(var(--real-border-size) * 10);
     --size: calc(100% + var(--border-size-2));
-    
+
     background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9A9AE2, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
     background-position: -50px -50px;
     background-size: var(--size) var(--size);
@@ -101,7 +195,7 @@ div[class^="menu"] {
 }
 
 /* context menu border */
-div[class^="menu"]:before {
+div[class^="menu"]:not([class^="menuIcon"]):before {
     content: "";
     position: absolute;
     top: 0;
@@ -117,13 +211,13 @@ div[class^="menu"]:before {
 div[class^="submenuContainer"] div[class^="submenu"] {
     /* only change this property */
     --border-size: 1px;
-    
+
     /* math */
     --real-border-size: calc(var(--border-size) + 5px);
     --inverted-border-size: calc(-var(--real-border-size));
     --border-size-2: calc(var(--real-border-size) * 10);
     --size: calc(100% + var(--border-size-2));
-    
+
     background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9A9AE2, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
     background-position: -50px -50px;
     background-size: var(--size) var(--size);
