@@ -88,15 +88,37 @@ h1[class^="name"],
 /* channel topic */
 div[class^="topic"],
 /* search placeholder */
-div[class^="public-DraftEditorPlaceholder"] {
+div[class^="public-DraftEditorPlaceholder"],
+/* mention */
+span.mention {
     background: var(--ely-gradient) no-repeat;
     font-family: 'Quicksand';
     font-size: 15px;
     font-weight: 100;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 0.56px;
+    -webkit-text-stroke-width: 0.58px;
     -webkit-text-stroke-color: transparent;
+}
+
+/* mention */
+span.mention {
+    background: var(--ely-gradient) no-repeat !important;
+    -webkit-background-clip: text !important;
+}
+
+
+/* mention */
+span.mention:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--ely-gradient);
+    opacity: 0.2;
 }
 
 /* search placeholder */
