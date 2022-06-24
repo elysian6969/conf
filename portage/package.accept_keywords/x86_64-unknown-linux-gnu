@@ -37,3 +37,7 @@ x11-misc/picom **
 x11-misc/xwinwrap **
 
 dev-util/radare2 ~amd64
+
+media-sound/pw-viz ~amd64
+
+sys-process/htop ~amd64

@@ -1,21 +1,32 @@
 CHOST="x86_64-pc-linux-musl"
 
-DEFAULT_CFLAGS="-march=native -O2 -fomit-frame-pointer -pipe"
-DEFAULT_CXXFLAGS="${DEFAULT_CFLAGS}"
+export DEFAULT_CFLAGS="-march=native -Ofast -fomit-frame-pointer -pipe"
+export DEFAULT_CXXFLAGS="${DEFAULT_CFLAGS}"
 
-export PATH="/usr/x86_64-pc-linux-musl/libexec/paludis/utils"
-export PATH="/usr/x86_64-pc-linux-musl/bin:${PATH}"
+export PATH="/usr/x86_64-pc-linux-musl/bin"
 export PATH="/milk/global:${PATH}"
+export PATH="/usr/x86_64-pc-linux-musl/libexec/paludis/utils/exheres-0:${PATH}"
+export PATH="/usr/x86_64-pc-linux-musl/libexec/paludis/utils:${PATH}"
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 case "${CATEGORY}/${PN}" in
-    dev-lang/python)
-        #DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -O3"
-        #DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -O3"
+    dev-lang/python | sys-libs/glibc | sys-libs/musl)
+        export DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -fno-fast-math"
+        export DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -fno-fast-math"
         ;;
-    sys-libs/musl*)
-        DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -O3"
-        DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -O3"
+    sys-libs/ncurses)
+        #export DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -fPIC -static"
+        #export DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -fPIC -static"
+        ;;
+    sys-boot/efibootmgr)
+        export DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -I/usr/x86_64-pc-linux-gnu/include/efivar"
+        export DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -I/usr/x86_64-pc-linux-gnu/include/efivar"
+        ;;
+    x11-dri/mesa)
+        export DEFAULT_CFLAGS="${DEFAULT_CFLAGS} -ltinfo"
+        export DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS} -ltinfo"
         ;;
 esac
 
@@ -24,13 +35,18 @@ case "${PALUDIS_CROSS_COMPILE_HOST}" in
         export PATH="/usr/i686-pc-linux-gnu/bin:${PATH}"
         ;;
     x86_64-pc-linux-gnu)
+        export PATH="/usr/x86_64-pc-linux-gnu/lib/llvm/11/bin:${PATH}"
         export PATH="/usr/x86_64-pc-linux-gnu/bin:${PATH}"
+
+        export CMAKE_SYSTEM_PREFIX_PATH="/usr/x86_64-pc-linux-gnu/lib/llvm/11/lib/cmake/llvm;${CMAKE_SYSTEM_PREFIX_PATH}"
+        export CMAKE="/usr/x86_64-pc-linux-gnu/bin/cmake"
+        export PKG_CONFIG="/usr/x86_64-pc-linux-gnu/bin/pkg-config"
+        export LLVM_CONFIG="/usr/x86_64-pc-linux-gnu/lib/llvm/11/bin/llvm-config"
+        export LLVM_DIR="/usr/x86_64-pc-linux-gnu/lib/llvm/11"
+
+        export PKG_CONFIG_PATH="/usr/x86_64-pc-linux-gnu/lib/pkgconfig"
         ;;
 esac
-
-echo "${CATEGORY}/${PN}"
-echo DEFAULT_CFLAGS="${DEFAULT_CFLAGS}"
-echo DEFAULT_CXXFLAGS="${DEFAULT_CXXFLAGS}"
 
 i686_pc_linux_gnu_CFLAGS="${DEFAULT_CFLAGS}"
 i686_pc_linux_gnu_CXXFLAGS="${DEFAULT_CXXFLAGS}"
@@ -40,3 +56,6 @@ x86_64_pc_linux_gnu_CXXFLAGS="${DEFAULT_CXXFLAGS}"
 
 x86_64_pc_linux_musl_CFLAGS="${DEFAULT_CFLAGS}"
 x86_64_pc_linux_musl_CXXFLAGS="${DEFAULT_CXXFLAGS}"
+
+unset DEFAULT_CFLAGS
+unset DEFAULT_CXXFLAGS

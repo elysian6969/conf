@@ -37,7 +37,7 @@ sys-libs/llvm-libunwind static-libs abi_x86: 32
 #net-misc/curl http2 ipv6 openssl quiche ssl sslv3 threads curl_ssl: openssl
 net-misc/curl http2 ipv6 openssl quiche ssl threads abi_x86: 32 curl_ssl: openssl
 
-media-video/ffmpeg chromium debug encode gpl hardcoded-tables openh264 vpx x264 x265 webp abi_x86: 32
+media-video/ffmpeg X chromium debug encode gpl hardcoded-tables openh264 vpx x264 x265 webp abi_x86: 32
 
 media-libs/openh264 abi_x86: 32
 media-libs/libwebp abi_x86: 32
@@ -134,3 +134,20 @@ dev-python/flit_core python_targets: python3_9
 dev-python/pyparsing python_targets: python3_9
 dev-python/jaraco-context python_targets: python3_9
 dev-python/jaraco-functools python_targets: python3_9
+
+x11-drivers/nvidia-drivers X driver static-libs tools abi_x86: 32
+
+sys-devel/gdb multitarget
+
+dev-qt/qtgui X
+dev-qt/qtsql sqlite
+dev-qt/qtnetwork ssl
+dev-util/google-perftools minimal
+dev-lang/python sqlite
+
+>=x11-libs/libxkbcommon-1.4.0 X
+>=dev-libs/libpcre2-10.40 unicode pcre16
+
+dev-util/google-perftools debug
+
+x11-apps/mesa-progs X egl

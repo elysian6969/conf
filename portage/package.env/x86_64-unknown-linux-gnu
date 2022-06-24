@@ -82,6 +82,7 @@ net-print/cups nolto.conf
 app-text/ghostscript-gpl nolto.conf
 dev-java/openjdk gcc.conf
 
+dev-util/google-perftools steam.conf
 #media-video/ffmpeg steam.conf
 #sys-libs/glibc steam.conf
 #x11-libs/gtk+ steam.conf
